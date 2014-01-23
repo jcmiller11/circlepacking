@@ -3,7 +3,7 @@ function draw(n, circleSize, holeSize, canvas) {
   var req, context, coordinates, lineArray, dataArray
   req = new XMLHttpRequest()
   context = canvas.getContext('2d')
-  req.open('GET', 'data/' + n + '.txt')
+  req.open('GET', 'data-extra/' + n + '.txt')
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
       canvas.width = holeSize + 2
