@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8" />
+  <title>Circle Packing Calculator</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="../circlepacking.js"></script>
+	<script src="../circlepacking-extra.js"></script>
+	<script type="text/javascript">
+		function calculate() {
+      var n, circleSize, holeSize
+      circleSize = parseFloat(document.getElementById('circleSize').value)
+      n = parseFloat(document.getElementById('numberOfCircles').value)
+		  holeSize = getMinimumHoleSize(n, circleSize)
+      document.getElementById('holeSize').value = holeSize
+      document.getElementById('packingDensity').value = getPackingDensity(n, circleSize, holeSize)
+      draw(n, circleSize, holeSize, document.getElementById('myCanvas'),'../')
+		}
+  </script>
+</head>
+<body onload="calculate()">
+Number of Inner Circles:<input type="text" id="numberOfCircles" value=2><br>
+Inner Circle Diameter:<input type="text" id="circleSize" value=100><br>
+<input type="button" value="Calculate" onClick="calculate()"><br>
+Minimum Outer Circle Diameter:<input type="text" id="holeSize" class="result" value=50 readonly><br>
+Packing Density:<input type="text" id="packingDensity" class="result" value=0 readonly><br>
+<label>Display Graphics:<input type="checkbox" id="display" checked onchange="document.getElementById('myCanvas').style.display=(document.getElementById('display').checked?'block':'none')"></label><br>
+<hr>
+<canvas id="myCanvas"></canvas>
+<script type="text/javascript">
+</script>
+</body>
+</html>

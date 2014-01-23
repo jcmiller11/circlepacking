@@ -1,0 +1,11 @@
+body {
+margin:1em;
+font: 16px "Helvetica Neue",Helvetica, Arial, sans-serif;
+}
+input {
+font: 16px "Helvetica Neue",Helvetica, Arial, sans-serif;
+}
+.result {
+border: 0;
+font: 16px "Helvetica Neue",Helvetica, Arial, sans-serif;
+}
