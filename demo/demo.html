@@ -9,26 +9,26 @@
 	<script src="../circlepacking.js"></script>
 	<script src="../circlepacking-extra.js"></script>
 	<script type="text/javascript">
-  function draw(n, circleSize, holeSize) {
-    var context,canvas
-    canvas = document.getElementById('myCanvas')
-    context = canvas.getContext('2d')
-    getPositions(n, circleSize, holeSize, function (resultArray) {
-      canvas.width = holeSize + 2
-      canvas.height = holeSize + 2
-      context.beginPath()
-      context.arc(holeSize / 2 + 1, holeSize / 2 + 1, holeSize / 2, 0, Math.PI * 2, true)
-      context.closePath()
-      context.stroke()
-      context.fillStyle = '#0f628b' //Color of internal circles
-      for(var i = 0;i<resultArray.length;i++) {
+    function draw(n, circleSize, holeSize) {
+      var context,canvas
+      canvas = document.getElementById('myCanvas')
+      context = canvas.getContext('2d')
+      getPositions(n, circleSize, holeSize, function (resultArray) {
+        canvas.width = holeSize + 2
+        canvas.height = holeSize + 2
         context.beginPath()
-        context.arc(holeSize / 2 + holeSize / 2 * parseFloat(resultArray[i][0]) + 1, holeSize / 2 + holeSize / 2 * parseFloat(resultArray[i][1]) + 1, circleSize / 2, 0, Math.PI * 2, true)
+        context.arc(holeSize / 2 + 1, holeSize / 2 + 1, holeSize / 2, 0, Math.PI * 2, true)
         context.closePath()
-        context.fill()
-      }
-    },'../data-extra/')
-  }
+        context.stroke()
+        context.fillStyle = '#0f628b' //Color of internal circles
+        for(var i = 0;i<resultArray.length;i++) {
+          context.beginPath()
+          context.arc(holeSize / 2 + holeSize / 2 * parseFloat(resultArray[i][0]) + 1, holeSize / 2 + holeSize / 2 * parseFloat(resultArray[i][1]) + 1, circleSize / 2, 0, Math.PI * 2, true)
+          context.closePath()
+          context.fill()
+        }
+      },'../data-extra/')
+    }
 		function calculateMinHoleSize() {
       var n, circleSize, holeSize
       circleSize = parseFloat(document.getElementById('circleSize').value)
