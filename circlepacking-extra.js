@@ -5,7 +5,7 @@ function getPositions(n, circleSize, holeSize, callbackFunc, datalocation) {
   req = new XMLHttpRequest()
   req.open('GET', datalocation + n + '.txt')
   req.onreadystatechange = function () {
-    if (req.readyState === 4 && req.status == 200) {
+    if (req.readyState === 4) {
       lineArray = req.responseText.split("\n")
       dataArray = lineArray[1].split(" ")
       resultArray = []
