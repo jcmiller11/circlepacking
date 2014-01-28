@@ -6,8 +6,8 @@
     body {margin:1em;font: 16px "Helvetica Neue",Helvetica, Arial, sans-serif;}
     input {font: 16px "Helvetica Neue",Helvetica, Arial, sans-serif;}
   </style>
-	<script src="../circlepacking.js"></script>
-	<script src="../circlepacking-extra.js"></script>
+	<script src="circlepacking.js"></script>
+	<script src="circlepacking-extra.js"></script>
 	<script type="text/javascript">
     function draw(n, circleSize, holeSize) {
       var context,canvas
@@ -27,7 +27,7 @@
           context.closePath()
           context.fill()
         }
-      },'../data-extra/')
+      })
     }
 		function calculateMinHoleSize() {
       var n, circleSize, holeSize
