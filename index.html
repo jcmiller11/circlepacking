@@ -20,7 +20,7 @@
         context.closePath()
         context.stroke()
         context.fillStyle = '#0f628b' //Color of internal circles
-        for(var i = 0;i<resultArray.length;i++) {
+        for(var i = 0; i < resultArray.length; i++) {
           context.beginPath()
           context.arc(holeSize / 2 + holeSize / 2 * parseFloat(resultArray[i][0]) + 1, holeSize / 2 + holeSize / 2 * parseFloat(resultArray[i][1]) + 1, circleSize / 2, 0, Math.PI * 2, true)
           context.closePath()

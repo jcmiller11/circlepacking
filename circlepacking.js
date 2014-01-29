@@ -11,7 +11,7 @@ function getMaxCircleSize(n, holeSize) {
 }
 
 function getMaxN(circleSize, holeSize) {
-  for (var i = 0; i < 1500; i += 1) {
+  for (var i = 0; i < 1500; i++) {
     if (window.radii[i] < (circleSize / holeSize)) return i - 1
   }
   return i
@@ -25,7 +25,7 @@ function getPositions(n, callbackFunc, datalocation) {
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
       resultArray = req.responseText.split("\n")
-      for(var i=0;i<resultArray.length;i++) {
+      for(var i = 0; i < resultArray.length; i++) {
         resultArray[i]=resultArray[i].split(",")
       }
       callbackFunc(resultArray)
