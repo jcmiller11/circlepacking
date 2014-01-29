@@ -26,9 +26,9 @@ function getPositions(n, callbackFunction, dataLocation) {
     if (req.readyState === 4) {
       resultArray = req.responseText.split("\n")
       for(var i = 0; i < resultArray.length; i++) {
-        resultArray[i]=resultArray[i].split(",")
-        resultArray[i][0]=parseFloat(resultArray[i][0])
-        resultArray[i][1]=parseFloat(resultArray[i][1])
+        resultArray[i] = resultArray[i].split(",")
+        resultArray[i][0] = parseFloat(resultArray[i][0])
+        resultArray[i][1] = parseFloat(resultArray[i][1])
       }
       callbackFunction(resultArray)
     }
@@ -39,8 +39,8 @@ function getPositions(n, callbackFunction, dataLocation) {
 function getScaledPositions(n, containerRadius, callbackFunction, dataLocation) {
   getPositions(n, function (resultArray) {
     for(var i = 0; i < resultArray.length; i++) {
-      resultArray[i][0]= containerRadius * resultArray[i][0] + containerRadius
-      resultArray[i][1]= containerRadius * resultArray[i][1] + containerRadius
+      resultArray[i][0] = containerRadius * resultArray[i][0] + containerRadius
+      resultArray[i][1] = containerRadius * resultArray[i][1] + containerRadius
     }
     callbackFunction(resultArray)
   }, dataLocation)
