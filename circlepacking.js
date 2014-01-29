@@ -19,10 +19,10 @@ function getCircleRadius(n, containerRadius) {
 }
 
 function getN(circleDiameter, containerDiameter) {
-  for (var i = 1; i <= 1500; i++) {
-    if (window.radii[i] < (circleDiameter / containerDiameter)) break
+  for (var i = 0; i < 1500; i++) {
+    if (window.radii[i + 1] < (circleDiameter / containerDiameter)) break
   }
-  return i - 1
+  return i
 }
 
 function getPositions(n, callbackFunction, dataLocation) {
