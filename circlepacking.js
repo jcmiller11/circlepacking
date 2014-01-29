@@ -6,8 +6,16 @@ function getContainerDiameter(n, circleDiameter) {
   return circleDiameter / window.radii[n]
 }
 
+function getContainerRadius(n, circleRadius) {
+  return getContainerDiameter(n, circleRadius)
+}
+
 function getCircleDiameter(n, containerDiameter) {
   return window.radii[n] * containerDiameter
+}
+
+function getCircleRadius(n, containerRadius) {
+  return getCircleDiameter(n, containerRadius)
 }
 
 function getN(circleDiameter, containerDiameter) {
