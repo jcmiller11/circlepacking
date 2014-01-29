@@ -8,60 +8,61 @@
   </style>
 	<script src="circlepacking.js"></script>
 	<script type="text/javascript">
-    function draw(n, circleDiameter, containerDiameter) {
+    function draw(n, circleRadius, containerRadius) {
       var context,canvas
       canvas = document.getElementById('myCanvas')
       context = canvas.getContext('2d')
-      getPositions(n, function (resultArray) {
-        canvas.width = containerDiameter + 2
-        canvas.height = containerDiameter + 2
+      getScaledPositions(n, containerRadius, function (resultArray) {
+        canvas.width = containerRadius*2 + 2
+        canvas.height = containerRadius*2 + 2
+        context.translate(1,1)
         context.beginPath()
-        context.arc(containerDiameter / 2 + 1, containerDiameter / 2 + 1, containerDiameter / 2, 0, Math.PI * 2, true)
+        context.arc(containerRadius, containerRadius, containerRadius, 0, Math.PI * 2, true)
         context.closePath()
         context.stroke()
         context.fillStyle = '#0f628b' //Color of internal circles
         for(var i = 0; i < resultArray.length; i++) {
           context.beginPath()
-          context.arc(containerDiameter / 2 + containerDiameter / 2 * parseFloat(resultArray[i][0]) + 1, containerDiameter / 2 + containerDiameter / 2 * parseFloat(resultArray[i][1]) + 1, circleDiameter / 2, 0, Math.PI * 2, true)
+          context.arc(resultArray[i][0], resultArray[i][1], circleRadius, 0, Math.PI * 2, true)
           context.closePath()
           context.fill()
         }
       })
     }
-		function calculateContainerDiameter() {
-      var n, circleDiameter, containerDiameter
-      circleDiameter = parseFloat(document.getElementById('circleDiameter').value)
+		function calculateContainerRadius() {
+      var n, circleRadius, containerRadius
+      circleRadius = parseFloat(document.getElementById('circleRadius').value)
       n = parseFloat(document.getElementById('numberOfCircles').value)
-		  containerDiameter = getContainerDiameter(n, circleDiameter)
-      document.getElementById('containerDiameter').value = containerDiameter
-      document.getElementById('packingDensity').value = getPackingDensity(n, circleDiameter, containerDiameter)
-      draw(n, circleDiameter, containerDiameter)
+		  containerRadius = getContainerRadius(n, circleRadius)
+      document.getElementById('containerRadius').value = containerRadius
+      document.getElementById('packingDensity').value = getPackingDensity(n, circleRadius, containerRadius)
+      draw(n, circleRadius, containerRadius)
 		}
-		function calculateCircleDiameter() {
-      var n, circleDiameter, containerDiameter
-      containerDiameter = parseFloat(document.getElementById('containerDiameter').value)
+		function calculateCircleRadius() {
+      var n, circleRadius, containerRadius
+      containerRadius = parseFloat(document.getElementById('containerRadius').value)
       n = parseFloat(document.getElementById('numberOfCircles').value)
-		  circleDiameter = getCircleDiameter(n, containerDiameter)
-      document.getElementById('circleDiameter').value = circleDiameter
-      document.getElementById('packingDensity').value = getPackingDensity(n, circleDiameter, containerDiameter)
-      draw(n, circleDiameter, containerDiameter)
+		  circleRadius = getCircleRadius(n, containerRadius)
+      document.getElementById('circleRadius').value = circleRadius
+      document.getElementById('packingDensity').value = getPackingDensity(n, circleRadius, containerRadius)
+      draw(n, circleRadius, containerRadius)
 		}
 		function calculateN() {
-      var n, circleDiameter, containerDiameter
-      circleDiameter = parseFloat(document.getElementById('circleDiameter').value)
-      containerDiameter = parseFloat(document.getElementById('containerDiameter').value)
-      n = getN(circleDiameter, containerDiameter)
+      var n, circleRadius, containerRadius
+      circleRadius = parseFloat(document.getElementById('circleRadius').value)
+      containerRadius = parseFloat(document.getElementById('containerRadius').value)
+      n = getN(circleRadius, containerRadius)
       document.getElementById('numberOfCircles').value = n
-      document.getElementById('packingDensity').value = getPackingDensity(n, circleDiameter, containerDiameter)
-      draw(n, circleDiameter, containerDiameter)
+      document.getElementById('packingDensity').value = getPackingDensity(n, circleRadius, containerRadius)
+      draw(n, circleRadius, containerRadius)
 		}
   </script>
 </head>
-<body onload="calculateContainerDiameter()">
+<body onload="calculateContainerRadius()">
 <a href="javascript:window.location.href=(document.getElementById('myCanvas').toDataURL('image/png').replace('image/png', 'image/octet-stream'))" download="circlepack.png" style="float:right;">Download Image</a>
 Number of Inner Circles:<input type="text" id="numberOfCircles" value=7><input type="button" value="<- Calculate" onClick="calculateN()"><br>
-Inner Circle Diameter:<input type="text" id="circleDiameter" value=100><input type="button" value="<- Calculate" onClick="calculateCircleDiameter()"><br>
-Container Circle Diameter:<input type="text" id="containerDiameter"><input type="button" value="<- Calculate" onClick="calculateContainerDiameter()"><br>
+Inner Circle Radius:<input type="text" id="circleRadius" value=100><input type="button" value="<- Calculate" onClick="calculateCircleRadius()"><br>
+Container Circle Radius:<input type="text" id="containerRadius"><input type="button" value="<- Calculate" onClick="calculateContainerRadius()"><br>
 Packing Density:<input type="text" id="packingDensity" style="border: 0;" value=0 readonly><br>
 <hr>
 <canvas id="myCanvas"></canvas>
