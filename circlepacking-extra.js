@@ -4,20 +4,13 @@ function getPositions(n, callbackFunc, datalocation) {
   datalocation = (typeof datalocation === "undefined") ? "data-extra/" : datalocation
   req = new XMLHttpRequest()
   req.open('GET', datalocation + n + '.txt')
+  console.info(datalocation + n + '.txt')
   req.onreadystatechange = function () {
     if (req.readyState === 4) {
-      lineArray = req.responseText.split("\n")
-      dataArray = lineArray[1].split(" ")
-      resultArray = []
-      for (var i = 0; i < lineArray.length - 1; i += 1) {
-        dataArray = lineArray[i].split(" ")
-        coordinates = []
-        for (var ii = 0; ii < dataArray.length; ii += 1) {
-          if (dataArray[ii].length > 5) {
-            coordinates.push(dataArray[ii])
-          }
-        }
-        resultArray.push(coordinates)
+      resultArray = req.responseText.split("\n")
+      console.info(resultArray)
+      for(var i=0;i<resultArray.length;i++){
+        resultArray[i]=resultArray[i].split(",")
       }
       callbackFunc(resultArray)
     }
