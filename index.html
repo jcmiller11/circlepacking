@@ -13,7 +13,7 @@
       var context,canvas
       canvas = document.getElementById('myCanvas')
       context = canvas.getContext('2d')
-      getPositions(n, circleSize, holeSize, function (resultArray) {
+      getPositions(n, function (resultArray) {
         canvas.width = holeSize + 2
         canvas.height = holeSize + 2
         context.beginPath()

@@ -1,4 +1,4 @@
-function getPositions(n, circleSize, holeSize, callbackFunc, datalocation) {
+function getPositions(n, callbackFunc, datalocation) {
   //All of the data for packing configurations is far too large to load, so we'll just pull what we need dynamically
   var req, coordinates, lineArray, dataArray, resultArray
   datalocation = (typeof datalocation === "undefined") ? "data-extra/" : datalocation
