@@ -39,8 +39,8 @@ function getPositions(n, callbackFunction, dataLocation) {
 function getScaledPositions(n, containerRadius, callbackFunction, dataLocation) {
   getPositions(n, function (resultArray) {
     for(var i = 0; i < resultArray.length; i++) {
-      resultArray[i][0]=containerRadius + containerRadius * resultArray[i][0]
-      resultArray[i][1]=containerRadius + containerRadius * resultArray[i][1]
+      resultArray[i][0]= containerRadius * resultArray[i][0] + containerRadius
+      resultArray[i][1]= containerRadius * resultArray[i][1] + containerRadius
     }
     callbackFunction(resultArray)
   }, dataLocation)
