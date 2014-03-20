@@ -31,3 +31,11 @@ __The following functions require the inclusion of the data-extra directory__
 `getPositions(n, callbackFunction, dataLocation)`
 
 `getScaledPositions(n, containerRadius, callbackFunction, dataLocation)`
+
+## Etc.
+
+This software is released under the [MIT License](http://jcmiller11.github.io/circlepacking/LICENSE.txt).
+
+Many thanks to Dr. Eckard Specht for compiling the pre-computed data this library uses and his [Packomania Site](http://hydra.nat.uni-magdeburg.de/packing/).
+
+`Specht, E. 2014. The best known packings of equal circles in a circle. [online] Available at: http://hydra.nat.uni-magdeburg.de/packing/cci/cci.html [Accessed: 20 Mar 2014].`
