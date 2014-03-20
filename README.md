@@ -2,12 +2,15 @@
 
 _Circle in circle packing javascript library_
 
-Doing things faster by cheating (pre-computation)
+Javascript library for quickly and efficiently working with optimal packing of congruent circles into a larger container circle.
+
+Check out the [Demo Page](http://jcmiller11.github.io/circlepacking/).
 
 ## Install
 
-For basic operation, just download the circlepacking.js file
+For basic operation, just download the circlepacking.js file and include it.
 
-For extra functionality (drawing results, positional data) you will need the circlepacking-extra.js file and data-extra directory.
+For working with the positions of inner circles you will need the data-extra directory and be operating in an environment that allows AJAX calls.
 
-[Demo](http://jcmiller11.github.io/circlepacking/).
+## Documentation
+
