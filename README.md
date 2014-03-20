@@ -38,4 +38,4 @@ This software is released under the [MIT License](http://jcmiller11.github.io/ci
 
 Many thanks to Dr. Eckard Specht for compiling the pre-computed data this library uses and his [Packomania Site](http://hydra.nat.uni-magdeburg.de/packing/).
 
-`Specht, E. 2014. The best known packings of equal circles in a circle. [online] Available at: http://hydra.nat.uni-magdeburg.de/packing/cci/cci.html [Accessed: 20 Mar 2014].`
+Specht, E. 2014. _The best known packings of equal circles in a circle._ [online] Available at: http://hydra.nat.uni-magdeburg.de/packing/cci/cci.html [Accessed: 20 Feb 2014].
