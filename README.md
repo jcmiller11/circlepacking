@@ -28,9 +28,9 @@ Returns the maximum number of internal circles of radius _circleRadius_ that can
 
 __The following functions require the inclusion of the data-extra directory__
 
-`getPositions(n, callbackFunction, dataLocation)`
+`getPositions(n, callbackFunction)`
 
-`getScaledPositions(n, containerRadius, callbackFunction, dataLocation)`
+`getScaledPositions(n, containerRadius, callbackFunction)`
 
 ## Etc.
 
